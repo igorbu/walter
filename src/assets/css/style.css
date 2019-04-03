@@ -1,0 +1,336 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+      "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+      monospace;
+  }
+/*loader*/
+  .ajax-loading-block-window {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 11000;
+    width: 100%;
+    height: 100%;
+      background-color: rgba(204, 204, 204, .5);
+  }
+  .ajax-loading-block-window:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50px;
+    height: 50px;
+    margin: -25px 0 0 -25px;
+    border-radius: 2px;
+    background-color: #0679ae;
+    animation: animate 0.5s linear infinite;
+  }
+  .ajax-loading-block-window:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50px;
+    height: 5px;
+    margin: 35px 0 0 -25px;
+    border-radius: 50%;
+    background-color: #a7c526;
+    opacity: 1;
+    animation: shadow 0.5s linear infinite;
+  }
+  
+  @-webkit-keyframes animate {
+    15% {
+      border-bottom-right-radius: 2px;
+    }
+    25% {
+      transform: translateY(9px) rotate(22.5deg);
+    }
+    50% {
+      transform: translateY(18px) scale(1, 0.9) rotate(45deg);
+      border-bottom-right-radius: 40px;
+    }
+    75% {
+      transform: translateY(9px) rotate(67.5deg);
+    }
+    100% {
+      transform: translateY(0) rotate(90deg);
+    }
+  }
+  @keyframes animate {
+    15% {
+      border-bottom-right-radius: 2px;
+    }
+    25% {
+      transform: translateY(9px) rotate(22.5deg);
+    }
+    50% {
+      transform: translateY(18px) scale(1, 0.9) rotate(45deg);
+      border-bottom-right-radius: 40px;
+    }
+    75% {
+      transform: translateY(9px) rotate(67.5deg);
+    }
+    100% {
+      transform: translateY(0) rotate(90deg);
+    }
+  }
+  @-webkit-keyframes shadow {
+    0%, 100% {
+      transform: scale(1, 1);
+    }
+    50% {
+      transform: scale(1.2, 1);
+    }
+  }
+  @keyframes shadow {
+    0%, 100% {
+      transform: scale(1, 1);
+    }
+    50% {
+      transform: scale(1.2, 1);
+    }
+  }
+  /*end loader*/
+
+  /*card*/
+  .card {
+    position: relative;
+    display: -webkit-flex;
+    display: flex;    
+    min-width: 0;    
+    background-color: #fff;
+    background-clip: border-box;
+    margin-bottom: 10px;
+    border: 0px solid rgba(0,0,0,.125);
+    border-radius: 0px;
+    padding: 0px 10px;
+  }
+  .card-grid {
+    position: relative;
+    display: -webkit-flex;
+    display: flex;    
+    min-width: 0;    
+    background-color: #fff;
+    background-clip: border-box;
+    margin-bottom: 10px;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: 0px;
+    padding: 0px 10px;
+  }
+  /*content grid*/
+  .card-grid .content-grid{
+   height: 400px;
+  }
+  .card-grid .content-grid img{
+    text-align: center;
+    width: 80%;
+    max-height: 200px;
+    height: 200px;   
+    padding: 15px; 
+  }
+
+  .card-grid .content-grid .title{
+    font-size: 15px;
+    font-weight: bold;
+    height: 80px;
+    max-height: 80px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    border-top: 1px solid #ccc;
+    padding-top: 5px;
+    text-transform: capitalize;
+    border-bottom:1px solid #f1f1f1;
+  }
+  .card-grid .content-grid .price{
+    color:#052d2e;
+    font-size: 22px;
+    font-weight: bold;
+    text-transform: uppercase;
+    height: 50px;
+    max-height: 50px;
+    margin-bottom: 10px;
+    margin-top:5px;
+   
+  }
+  .card-grid .content-grid .add-to-cart{
+    color:#052d2e;   
+  }
+  
+  /*end content grid*/
+/*content grid*/
+
+.card .content img{
+  text-align: center;
+  width: 80%;
+  max-height: 300px;
+  height: 300px;   
+  padding: 15px; 
+}
+
+.card .content .title{
+  font-size: 18px;
+  font-weight: bold;
+  height: 100px;
+  max-height: 1000px;
+  margin-bottom: 10px;
+  margin-top: 5px;
+  
+  padding-top: 5px;
+  text-transform: capitalize;
+  border-bottom:1px solid #f1f1f1;
+}
+.card .content .price{
+  color:#052d2e;
+  font-size: 22px;
+  font-weight: bold;
+  text-transform: uppercase;
+  height: 50px;
+  max-height: 50px;
+  margin-bottom: 10px;
+  margin-top:5px;
+
+}
+.card .content .add-to-cart{
+  color:#05205d;
+}
+.card .content .input{
+  width: 32px;
+  height: 31px;
+  border-radius: 2px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+.card .content .description h2{
+  text-transform: uppercase; 
+  font-size: 22px;  
+}
+.card .content .description{
+ text-align: justify;
+ padding: 5px;
+}
+/*end content grid*/
+  /*end card*/
+
+  .containerChk {
+    display: block;
+    position: relative;
+    padding-left: 45px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+   
+    text-transform: capitalize;
+    font-size: 14px;
+}
+
+/* Hide the browser's default checkbox */
+.containerChk input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Create a custom checkbox */
+.checkmark,.checkmarkDisabled {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 22px;
+    width: 22px;
+    background-color: transparent;
+    margin-left: 1px;
+    border: 1px solid;
+    border-radius: 0px;
+}
+
+/* On mouse-over, add a grey background color */
+.containerChk:hover input ~ .checkmark,.checkmarkDisabled {
+    background-color: #ccc;
+}
+.disabled {
+    cursor:not-allowed !important;
+   
+}
+/* When the checkbox is checked, add a blue background */
+.containerChk input:checked ~ .checkmark,.checkmarkDisabled {
+    background-color: #05205d !important;
+    border-radius: 0px;
+    border: 1px solid #05205d;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after,.checkmarkDisabled:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.containerChk input:checked ~ .checkmark:after,.checkmarkDisabled:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.containerChk .checkmark:after {
+    left: 6px;
+    top: 2px;
+    width: 8px;
+    height: 13px;
+    border: solid #fff;
+    border-width: 0 4px 4px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.containerChk .checkmarkDisabled:after  {
+    left: 6px;
+    top: 2px;
+    width: 8px;
+    height: 13px;
+    border: solid #999;
+    border-width: 0 4px 4px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+
+/*table*/
+
+.card .content .table th:first-child, td:first-child {
+  width: 50px;
+  text-align: left !important;
+}
+
+/*end table*/
+
+/* global*/
+.rightPosition{
+  text-align: right;
+}
+
+.search{
+  margin: 10px;
+}
+.bold-big{
+  font-weight: 600;
+  font-size: 25px;
+}
+.margin-bottom{
+  margin-bottom:10px;
+}
